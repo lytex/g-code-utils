@@ -75,3 +75,11 @@ Mechanical alignment systems may induce errors above 300-400um, enough to ruin t
     - Run the software by executing the following command on a terminal:
     
         `java -jar g-code-utils-*.jar`
+
+* **Docker (Linux, X11 or Wayland via XWayland)**
+
+    - Place the _JAR_ file in the repository root and build the image:
+
+        `docker build -t g-code-utils .`
+
+    - Run it with `./docker-run.sh`. The script forwards the X display (including the XWayland auth cookie used by KDE/GNOME Wayland sessions) and the GPU, and mounts your home directory so G-code files can be opened and saved. Settings are kept in `~/.config/g-code-utils`.
